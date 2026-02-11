@@ -16,7 +16,7 @@ st.caption(f"📅 Objectif Fin d'études : 31 Août 2026 (Reste {mois_restants} 
 # --- CONNEXION GOOGLE SHEET ---
 # C'est ici que l'appli va chercher tes données sauvegardées
 conn = st.connection("gsheets", type=GSheetsConnection)
-data = conn.read(worksheet="Feuille 1", usecols=[0, 1, 2, 3], ttl=5)
+data = conn.read(worksheet="Data", usecols=[0, 1, 2, 3], ttl=5)
 # On s'assure que les données vides sont bien gérées
 if data.empty:
     data = pd.DataFrame(columns=["Date", "Categorie", "Montant", "Note"])
